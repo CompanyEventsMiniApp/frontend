@@ -1,0 +1,18 @@
+name: Trigger Frontend Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger frontend deployment
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          repository: CompanyEventsMiniApp/deployments
+          token: ${{ secrets.PAT }}
+          event-type: deploy_frontend 
