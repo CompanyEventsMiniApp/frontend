@@ -22,7 +22,7 @@ interface ApiClient extends AxiosInstance {
  */
 const createApiClient = (getUser?: () => { user: TelegramUser | null }): ApiClient => {
     const instance = axios.create({
-        baseURL: process.env.REACT_APP_API_URL,
+        baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8080',
     });
 
     instance.interceptors.request.use((config: InternalAxiosRequestConfig) => {

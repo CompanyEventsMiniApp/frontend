@@ -40,7 +40,7 @@ const App: React.FC = () => {
        * Router обеспечивает клиентскую маршрутизацию в приложении.
        * BrowserRouter использует HTML5 history API.
        */}
-        <Router>
+        <Router basename="/deployments">
           {/* Основной контейнер приложения */}
           <div className="app-container">
             {/*

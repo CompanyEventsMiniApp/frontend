@@ -6,8 +6,8 @@ declare global {
     }
 }
 
-const API_KEY_JS = '9346f310-d786-4085-b396-97dca6243c98';
-const API_KEY = '174f2ef9-0596-4f81-ba10-80589ec5b8fa';
+const API_KEY_JS = process.env.REACT_APP_YANDEX_API_KEY_JS || '';
+const API_KEY = process.env.REACT_APP_YANDEX_API_KEY || '';
 
 const YandexSuggestInput = ({ value, onChange }: { value: string; onChange: (value: string) => void }) => {
     const inputRef = useRef<HTMLInputElement>(null);
